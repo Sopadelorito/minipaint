@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MiniPaint</title>
+
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- CABECERA -->
+        <header class="header">
+            <h1>🎨 MiniPaint</h1>
+
+            <div class="acciones">
+                <button id="deshacer" title="Deshacer">
+                    ↶
+                </button>
+
+                <button id="rehacer" title="Rehacer">
+                    ↷
+                </button>
+
+                <button id="limpiar" title="Borrar todo">
+                    🗑️
+                </button>
+
+                <button id="guardar" title="Guardar imagen">
+                    💾
+                </button>
+            </div>
+        </header>
+
+
+        <!-- BARRA DE HERRAMIENTAS -->
+        <div class="toolbar">
+
+            <!-- HERRAMIENTAS -->
+
+            <div class="grupo">
+
+                <span class="titulo">
+                    Herramientas
+                </span>
+
+                <button
+                    class="herramienta activo"
+                    data-herramienta="lapiz"
+                    title="Lápiz"
+                >
+                    ✏️
+                </button>
+
+                <button
+                    class="herramienta"
+                    data-herramienta="goma"
+                    title="Goma"
+                >
+                    🧹
+                </button>
+
+                <button
+                    class="herramienta"
+                    data-herramienta="linea"
+                    title="Línea"
+                >
+                    📏
+                </button>
+
+                <button
+                    class="herramienta"
+                    data-herramienta="rectangulo"
+                    title="Rectángulo"
+                >
+                    ▭
+                </button>
+
+                <button
+                    class="herramienta"
+                    data-herramienta="circulo"
+                    title="Círculo"
+                >
+                    ○
+                </button>
+
+                <button
+                    class="herramienta"
+                    data-herramienta="relleno"
+                    title="Relleno"
+                >
+                    🪣
+                </button>
+
+            </div>
+
+
+            <!-- COLOR -->
+
+            <div class="grupo">
+
+                <span class="titulo">
+                    Color
+                </span>
+
+                <input
+                    type="color"
+                    id="color"
+                    value="#000000"
+                >
+
+            </div>
+
+
+            <!-- GROSOR -->
+
+            <div class="grupo">
+
+                <label for="grosor">
+                    Grosor
+                </label>
+
+                <input
+                    type="range"
+                    id="grosor"
+                    min="1"
+                    max="50"
+                    value="5"
+                >
+
+                <span id="valor-grosor">
+                    5 px
+                </span>
+
+            </div>
+
+
+            <!-- FONDO -->
+
+            <div class="grupo">
+
+                <label for="fondo">
+                    Fondo
+                </label>
+
+                <input
+                    type="color"
+                    id="fondo"
+                    value="#ffffff"
+                >
+
+            </div>
+
+
+            <!-- CARGAR -->
+
+            <div class="grupo">
+
+                <label
+                    for="cargar-imagen"
+                    class="boton-cargar"
+                >
+                    📁 Cargar
+                </label>
+
+                <input
+                    type="file"
+                    id="cargar-imagen"
+                    accept="image/*"
+                    hidden
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- LIENZO -->
+
+        <main class="zona-dibujo">
+
+            <canvas id="canvas"></canvas>
+
+        </main>
+
+
+        <!-- PIE -->
+
+        <footer>
+
+            <span>
+                Herramienta:
+                <strong id="herramienta-actual">
+                    Lápiz
+                </strong>
+            </span>
+
+            <span>
+                Tamaño:
+                <strong id="tamano">
+                    5 px
+                </strong>
+            </span>
+
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
